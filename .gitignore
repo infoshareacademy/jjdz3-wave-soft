@@ -1,4 +1,4 @@
 .idea
 .idea/*
-App/App.iml
+App/*.iml
 App/target
