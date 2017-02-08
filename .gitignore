@@ -1,1 +1,6 @@
 .idea
+.idea/*
+App/App.iml
+App/target
+mvp.iml
+App.iml
