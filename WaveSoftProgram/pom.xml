@@ -21,5 +21,19 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
+    <!-- https://mvnrepository.com/artifact/com.hp.hpl.jena/json-jena -->
+    <dependency>
+      <groupId>com.hp.hpl.jena</groupId>
+      <artifactId>json-jena</artifactId>
+      <version>1.0</version>
+    </dependency>
+
+
+
   </dependencies>
+
+
+
+
+
 </project>

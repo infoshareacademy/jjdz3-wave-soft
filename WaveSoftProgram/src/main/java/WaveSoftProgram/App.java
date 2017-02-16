@@ -1,11 +1,12 @@
 package WaveSoftProgram;
 
 
-public class App 
+import org.json.JSONException;
+
+public class App
 {
     public static void main( String[] args )
-            throws java.io.IOException
-    {
+            throws java.io.IOException, JSONException {
         char choice, ignore;
         Menu menuAutoApp = new Menu();
         menuAutoApp.showLogo();
@@ -38,10 +39,6 @@ public class App
 
 
         }
-
-
-
-
     }
 }
 

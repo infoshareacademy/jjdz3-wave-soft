@@ -1,7 +1,10 @@
 package WaveSoftProgram;
 
-
 //klasa odpowiadająca za menu programu
+
+import org.json.JSONException;
+
+import java.io.IOException;
 
 public class Menu {
 
@@ -36,7 +39,7 @@ public class Menu {
 
 
     }
-         void menuLogic(int choice) {
+         void menuLogic(int choice) throws IOException, JSONException {
 
              //metoda obsługująca wybór wprowadzony przez użytkownika
 
@@ -52,11 +55,15 @@ public class Menu {
 
                     break;
                 case '3':
-                    System.out.println("3. WYBRAŁEŚ Identyfikacja auta po serii pytań. \n");
+
 
                     break;
                 case '4':
-                    System.out.println("4. WYBRAŁEŚ Identyfikacja pojazdu po kodzie Aztec. \n");
+
+                    FindingCarByAztecCode carByAztec = new FindingCarByAztecCode();
+
+                    carByAztec.jsonFileReader();
+                    carByAztec.jsonHandler();
 
                     break;
                 case '5':
