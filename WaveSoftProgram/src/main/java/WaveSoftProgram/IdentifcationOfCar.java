@@ -1,6 +1,7 @@
 package WaveSoftProgram;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.*;
@@ -29,7 +30,7 @@ public class IdentifcationOfCar {
     }
 
 
-    public static void jsonHandler() {
+    public static void jsonHandler() throws JSONException {
         // Creating object from JSON file
         JSONObject obj = new JSONObject(jsonData);
         // Printing out first object from JSON file
@@ -38,7 +39,7 @@ public class IdentifcationOfCar {
         JSONArray arr = obj.getJSONArray("data");
 
         //for loop which iterates on object's value in table.
-        for (int i = 0; i <= arr.length(); i++) {
+        for (int i = 0; i < arr.length(); i++) {
             JSONObject obj1 = arr.getJSONObject(i);
             String id = obj1.getString("id");
             String name = obj1.getString("name");
