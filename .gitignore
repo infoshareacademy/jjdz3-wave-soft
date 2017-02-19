@@ -3,4 +3,5 @@ App/App.iml
 App/target
 mvp.iml
 App.iml
-WaveSoftProgram/target/
+pom.xml
+WaveSoftProgram.iml
