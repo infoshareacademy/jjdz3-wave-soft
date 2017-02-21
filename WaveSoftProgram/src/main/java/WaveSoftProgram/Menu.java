@@ -8,6 +8,14 @@ import java.io.IOException;
 
 public class Menu {
 
+    private String menuTekst1 = "1. Znajdź część której szukasz na Allegro.\n";
+    private String menuTekst2 = "2. Znajdź część której szukasz na ebay.\n";
+    private String menuTekst3 = "3. Identyfikacja auta po serii pytań. \n";
+    private String menuTekst4 = "4. Identyfikacja pojazdu po kodzie Aztec. \n";
+    private String menuTekst5 = "5. Szybka diagnostyka samochodowa.  \n";
+    private String menuTekst6 = "   Wybierz numer instrukcji. \n";
+    private String menuTekst7 = "   Powrót do menu głównego z lub zakończenie \n   działania programu q.  ";
+
 
     void showLogo() {
 
@@ -29,13 +37,13 @@ public class Menu {
         System.out.println("----------------------------------------------------");
         System.out.println("|                      MENU                        | ");
         System.out.println("---------------------------------------------------- \n");
-        System.out.println("1. Znajdź część której szukasz na Allegro.\n");
-        System.out.println("2. Znajdź część której szukasz na ebay.\n");
-        System.out.println("3. Identyfikacja auta po serii pytań. \n");
-        System.out.println("4. Identyfikacja pojazdu po kodzie Aztec. \n");
-        System.out.println("5. Szybka diagnostyka samochodowa.  \n");
-        System.out.println("   Wybierz numer instrukcji. \n");
-        System.out.println("   Powrót do menu głównego z lub zakończenie \n   działania programu q.  ");
+        System.out.println(menuTekst1);
+        System.out.println(menuTekst2);
+        System.out.println(menuTekst3);
+        System.out.println(menuTekst4);
+        System.out.println(menuTekst5);
+        System.out.println(menuTekst6);
+        System.out.println(menuTekst7);
 
 
     }
