@@ -104,5 +104,9 @@ public class IdentifcationOfCar {
                 break;
             }
         }
+
+        IdentifcationOfCar idOfCar2 = new IdentifcationOfCar();
+        idOfCar2.jsonHandler();
+
     }
 }
