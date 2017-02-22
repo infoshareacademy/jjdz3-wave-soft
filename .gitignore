@@ -1,8 +1,5 @@
 .idea
-App/App.iml
-App/target
-mvp.iml
-App.iml
 pom.xml
 WaveSoftProgram.iml
 WaveSoftProgram/target/
+
