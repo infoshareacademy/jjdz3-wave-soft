@@ -2,6 +2,7 @@ package WaveSoftProgram;
 
 //klasa odpowiadająca za menu programu
 
+import WaveSoftProgram.parts.PartParser;
 import org.json.JSONException;
 
 import java.io.IOException;
@@ -55,6 +56,7 @@ public class Menu {
 
                 case '1':
                     System.out.println("1. WYBRAŁEŚ Znajdź część której szukasz na Allegro.\n");
+                    PartParser partParser = new PartParser();
 
                     break;
                 case '2':
