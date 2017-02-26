@@ -1,15 +1,16 @@
 package WaveSoftProgram.parts;
 
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * Created by piotr_gy on 22.02.17.
  */
 public class PlaceInCar {
     private String nameOfPlace;
-    private PartCategory[] categories;
+    private List<PartCategory> categories;
 
-    public PlaceInCar(String nameOfPlace, PartCategory[] categories) {
+    public PlaceInCar(String nameOfPlace, List<PartCategory> categories) {
         this.nameOfPlace = nameOfPlace;
         this.categories = categories;
     }
@@ -18,7 +19,7 @@ public class PlaceInCar {
         return nameOfPlace;
     }
 
-    public PartCategory[] getCategories() {
+    public List<PartCategory> getCategories() {
         return categories;
     }
 
@@ -26,7 +27,7 @@ public class PlaceInCar {
     public String toString() {
         return "PlaceInCar{" +
                 "nameOfPlace='" + nameOfPlace + '\'' +
-                ", categories=" + Arrays.toString(categories) +
+                ", categories=" + categories +
                 '}';
     }
 }
