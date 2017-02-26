@@ -13,7 +13,7 @@ public class PartParser {
     public PartParser() {
         try {
             ObjectMapper mapper = new ObjectMapper();
-            PlaceInCar placeInCar = mapper.readValue(new File("src/main/resources/parts.json"), PlaceInCar.class);
+            PlaceInCar placeInCar = mapper.readValue(new File("./WaveSoftProgram/src/main/resources/parts.json"), PlaceInCar.class);
 
 
             System.out.println(placeInCar);
