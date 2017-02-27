@@ -17,14 +17,14 @@ public class IdentifcationOfCar {
     private static String jsonData = "";
 
     //variables for innner menu
-    private static String questionForUser = "Podaj markę samochodu której szukasz";
-    private static String textJHMenu = "Wybrany pojazd:";
-    private static String textID = "ID: ";
-    private static String textName = "\nNazwa pojazdu: ";
-    private static String vehicleImage = "\nZdjęcie pojazdu: ";
-    private static String vehicleLink = "\nLink do historii przeglądów pojazdu: ";
-    private static String vehicleImageTrue = "(Wyświetlenie zdjęcia pojazdu)";
-    private static String vehicleImageFalse = "Brak zdjęcia pojazdu w bazie danych";
+    private static String MENU_QUESTION_FOR_USER = "Podaj markę samochodu której szukasz";
+    private static String MENU_CHOSEN_VEHICLE = "Wybrany pojazd:";
+    private static String MENU_VEHICLE_ID = "ID: ";
+    private static String MENU_VEHICLE_NAME = "\nNazwa pojazdu: ";
+    private static String VEHICLE_IMAGE = "\nZdjęcie pojazdu: ";
+    private static String VEHICLE_LINK = "\nLink do historii przeglądów pojazdu: ";
+    private static String VEHICLE_IMAGE_TRUE = "(Wyświetlenie zdjęcia pojazdu)";
+    private static String VEHICLE_IMAGE_FALSE = "Brak zdjęcia pojazdu w bazie danych";
 
     //variable for user input
     private static String chosenVehicleBrand;
@@ -63,7 +63,7 @@ public class IdentifcationOfCar {
         JSONArray arr = obj.getJSONArray("data");
 
         //Starting inner menu (menu of this class)
-        System.out.println(questionForUser);
+        System.out.println(MENU_QUESTION_FOR_USER);
         //assign user input
         chosenVehicleBrand = scan.next();
         //to avoid errors - setting input to upper case
@@ -82,20 +82,20 @@ public class IdentifcationOfCar {
 
             //new condition for finding vehicle which user is searching in database
             if (chosenVehicleBrandUpper.equals(obj1.getString("name"))) {
-                System.out.println(textJHMenu);
-                System.out.print(textID + id + textName + name);
+                System.out.println(MENU_CHOSEN_VEHICLE);
+                System.out.print(MENU_VEHICLE_ID + id + MENU_VEHICLE_NAME + name);
 
                 //next condition for checking if given vehicle have
                 //photo (value "true" for key "has_image") it will be
                 //printed on the screen (later, when project will be
                 //in more advanced phase)
                 if (hasImage == false) {
-                    System.out.print(vehicleImage + vehicleImageFalse);
+                    System.out.print(VEHICLE_IMAGE + VEHICLE_IMAGE_FALSE);
                 } else {
-                    System.out.print(vehicleImage + vehicleImageTrue);
+                    System.out.print(VEHICLE_IMAGE + VEHICLE_IMAGE_TRUE);
                 }
 
-                System.out.println(vehicleLink + link);
+                System.out.println(VEHICLE_LINK + link);
             } else if (chosenVehicleBrand.equals("q")) {
                 menuAutoApp.progEnding();
                 break;
