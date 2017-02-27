@@ -65,7 +65,7 @@ public class IdentifcationOfCar {
         //Starting inner menu (menu of this class)
         System.out.println(MENU_QUESTION_FOR_USER);
         //assign user input
-        chosenVehicleBrand = scan.next();
+        chosenVehicleBrand = scan.nextLine();
         //to avoid errors - setting input to upper case
         chosenVehicleBrandUpper = chosenVehicleBrand.toUpperCase();
 
