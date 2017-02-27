@@ -10,6 +10,8 @@ public class PartCategory {
     private String categoryName;
     private List <Part> parts;
 
+    public PartCategory() {}
+
     public PartCategory(String categoryName, List <Part> parts) {
         this.categoryName = categoryName;
         this.parts = parts;
