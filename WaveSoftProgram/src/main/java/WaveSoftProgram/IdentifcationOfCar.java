@@ -81,7 +81,7 @@ public class IdentifcationOfCar {
             String link = obj1.getString("link");
 
             //new condition for finding vehicle which user is searching in database
-            if (chosenVehicleBrandUpper.equals(obj1.getString("name"))) {
+            if (obj1.getString("name").contains(chosenVehicleBrandUpper)) {
                 System.out.println(MENU_CHOSEN_VEHICLE);
                 System.out.print(MENU_VEHICLE_ID + id + MENU_VEHICLE_NAME + name);
 
