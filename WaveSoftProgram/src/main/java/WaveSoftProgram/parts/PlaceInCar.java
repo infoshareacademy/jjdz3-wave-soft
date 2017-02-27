@@ -10,6 +10,8 @@ public class PlaceInCar {
     private String nameOfPlace;
     private List<PartCategory> categories;
 
+    public PlaceInCar() {}
+
     public PlaceInCar(String nameOfPlace, List<PartCategory> categories) {
         this.nameOfPlace = nameOfPlace;
         this.categories = categories;
@@ -21,6 +23,14 @@ public class PlaceInCar {
 
     public List<PartCategory> getCategories() {
         return categories;
+    }
+
+    public void setNameOfPlace(String nameOfPlace) {
+        this.nameOfPlace = nameOfPlace;
+    }
+
+    public void setCategories(List<PartCategory> categories) {
+        this.categories = categories;
     }
 
     @Override
