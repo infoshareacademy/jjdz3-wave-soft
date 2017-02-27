@@ -26,11 +26,32 @@ private List<PlaceInCar>placeInCar = new ArrayList<PlaceInCar>();
         ObjectMapper mapper = new ObjectMapper();
 
         JsonNode rootArray = mapper.readTree(new File("./WaveSoftProgram/src/main/resources/parts.json"));
-            PartCategory partCategory  = new PartCategory();
 
+
+
+
+            //odczytaj każdy element place_in_car
             for(JsonNode root : rootArray){
+                //odczytaj name_of_place
 
-                placeInCar.getNameOfPlace().add()= root.path("name_of_place").asText();
+                //odczytaj każdy element part_category
+                JsonNode partCategoryArray = rootArray.path("part_category");
+                for(JsonNode partCategory : partCategoryArray){
+                    //odczytaj category_name
+
+                    //odczytaj każdy element parts
+                    JsonNode partsArray = partCategoryArray.path("parts");
+                    for (JsonNode part : partsArray){
+                        //odczytaj part_id
+
+                        //odczytaj search_phrase
+
+                    }
+
+
+                }
+
+
 
 
 
@@ -59,3 +80,4 @@ private List<PlaceInCar>placeInCar = new ArrayList<PlaceInCar>();
     }
 
 }
+//PartCategory partCategory  = new PartCategory();
