@@ -20,6 +20,14 @@ public class Part {
         return searchPhrase;
     }
 
+    public void setPartId(String partId) {
+        this.partId = partId;
+    }
+
+    public void setSearchPhrase(String searchPhrase) {
+        this.searchPhrase = searchPhrase;
+    }
+
     @Override
     public String toString() {
         return "Part{" +
