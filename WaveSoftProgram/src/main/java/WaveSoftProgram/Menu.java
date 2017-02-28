@@ -67,7 +67,7 @@ public class Menu {
                     IdentifcationOfCar idOfCar = new IdentifcationOfCar();
 
                     idOfCar.jsonFileReader();
-                    idOfCar.jsonHandler();
+                    idOfCar.menu2();
 
                     break;
                 case '4':
