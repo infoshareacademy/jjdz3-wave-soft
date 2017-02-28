@@ -18,29 +18,38 @@ import org.codehaus.jackson.map.ObjectMapper;*/
  * Created by piotr_gy on 22.02.17.
  */
 public class PartParser {
-private List<PlaceInCar>placeInCar = new ArrayList<PlaceInCar>();
+private List<PlaceInCar>placeInCarList = new ArrayList<PlaceInCar>();
 
     public PartParser() {
 
         try {
-        ObjectMapper mapper = new ObjectMapper();
+        ObjectMapper mapper = new ObjectMapper(); /*./WaveSoftProgram/*/
 
-        JsonNode rootArray = mapper.readTree(new File("./WaveSoftProgram/src/main/resources/parts.json"));
-
-
+            JsonNode rootArray = mapper.readTree(new File("src/main/resources/parts.json"));
 
 
             //odczytaj każdy element place_in_car
-            for(JsonNode root : rootArray){
+            for(JsonNode rootNode : rootArray){
                 //odczytaj name_of_place
+                PlaceInCar placeInCar = new PlaceInCar();
+                JsonNode nameOfPlaceNode = rootNode.path("name_of_place");
+                placeInCar.setNameOfPlace(nameOfPlaceNode.asText());
+
 
                 //odczytaj każdy element part_category
                 JsonNode partCategoryArray = rootArray.path("part_category");
-                for(JsonNode partCategory : partCategoryArray){
+                List<PartCategory>partCategoryList = new ArrayList<PartCategory>();
+
+                for(JsonNode partCategoryNode : partCategoryArray){
                     //odczytaj category_name
+                    PartCategory partCategory = new PartCategory();
+                    JsonNode categoryNameNode = partCategoryNode.path("category_name");
+                    partCategory.setCategoryName(categoryNameNode.asText());
 
                     //odczytaj każdy element parts
                     JsonNode partsArray = partCategoryArray.path("parts");
+                    List<Part>partList = new ArrayList<Part>();
+
                     for (JsonNode part : partsArray){
                         //odczytaj part_id
 
@@ -48,14 +57,10 @@ private List<PlaceInCar>placeInCar = new ArrayList<PlaceInCar>();
 
                     }
 
-
+                    partCategoryList.add(partCategory);
                 }
 
-
-
-
-
-
+                placeInCarList.add(placeInCar);
             }
 
 
