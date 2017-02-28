@@ -25,6 +25,14 @@ public class PartCategory {
         return parts;
     }
 
+    public void setCategoryName(String categoryName) {
+        this.categoryName = categoryName;
+    }
+
+    public void setParts(List<Part> parts) {
+        this.parts = parts;
+    }
+
     @Override
     public String toString() {
         return "PartCategory{" +
