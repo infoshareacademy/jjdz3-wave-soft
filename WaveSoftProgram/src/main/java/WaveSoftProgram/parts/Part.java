@@ -7,6 +7,9 @@ public class Part {
     private String partId;
     private String searchPhrase;
 
+    public Part() {
+    }
+
     public Part(String partId, String searchPhrase) {
         this.partId = partId;
         this.searchPhrase = searchPhrase;
