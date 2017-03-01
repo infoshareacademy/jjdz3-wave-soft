@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.fasterxml.jackson.core.JsonGenerationException;
+//import com.fasterxml.jackson.core.JsonGenerationException;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -50,11 +50,16 @@ private List<PlaceInCar>placeInCarList = new ArrayList<PlaceInCar>();
                     JsonNode partsArray = partCategoryArray.path("parts");
                     List<Part>partList = new ArrayList<Part>();
 
-                    for (JsonNode part : partsArray){
+                    for (JsonNode partNode : partsArray){
+                        Part part = new Part();
+
                         //odczytaj part_id
+                        part.setPartId(partNode.path("part_id").asText());
 
                         //odczytaj search_phrase
+                        part.setSearchPhrase(partNode.path("search_phrase").asText());
 
+                        partList.add(part);
                     }
 
                     partCategoryList.add(partCategory);
@@ -63,26 +68,16 @@ private List<PlaceInCar>placeInCarList = new ArrayList<PlaceInCar>();
                 placeInCarList.add(placeInCar);
             }
 
-
-
-
-
-
-
-
-        //full data binding - doesn't work
-        /*
-            ObjectMapper mapper = new ObjectMapper();
-            PlaceInCar placeInCar = mapper.readValue(new File("./WaveSoftProgram/src/main/resources/parts.json"), PlaceInCar.class);
-
-
-            System.out.println(placeInCar);*/
-
         }
         catch (JsonParseException e) { e.printStackTrace(); }
         catch (JsonMappingException e) { e.printStackTrace(); }
         catch (IOException e) { e.printStackTrace(); }
+
+
+
     }
 
+    public List<PlaceInCar> getPlaceInCarList() {
+        return placeInCarList;
+    }
 }
-//PartCategory partCategory  = new PartCategory();
