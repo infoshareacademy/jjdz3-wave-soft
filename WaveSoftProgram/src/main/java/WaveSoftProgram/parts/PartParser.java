@@ -25,7 +25,8 @@ private List<PlaceInCar>placeInCarList = new ArrayList<PlaceInCar>();
         try {
         ObjectMapper mapper = new ObjectMapper(); /*./WaveSoftProgram/*/
 
-            JsonNode rootArray = mapper.readTree(new File("src/main/resources/parts.json"));
+            JsonNode mainArray = mapper.readTree(new File("src/main/resources/parts.json"));
+            JsonNode rootArray = mainArray.path("place_in_car");
 
 
             //odczytaj każdy element place_in_car
