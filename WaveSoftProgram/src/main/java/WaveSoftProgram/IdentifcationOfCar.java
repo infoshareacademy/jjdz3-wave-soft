@@ -92,15 +92,15 @@ public class IdentifcationOfCar {
         //Scanner for user input
         Scanner scan = new Scanner(System.in);
         // Creating object from JSON file
-        JSONObject obj = new JSONObject(jsonData);
+        JSONObject objectFromJSON = new JSONObject(jsonData);
 
        /* Unnecessary line of code, left for information purpose
         // Printing out first object from JSON file
-        System.out.println("Data type: " + obj.getString("datatype"));
+        System.out.println("Data type: " + objectFromJSON.getString("datatype"));
        */
 
         // Getting an array from object value using its key
-        JSONArray arr = obj.getJSONArray("data");
+        JSONArray arrayFromJSONObject = objectFromJSON.getJSONArray("data");
 
         //Starting inner menu (menu of this class)
         System.out.println(MENU_QUESTION_BRAND_FOR_USER);
@@ -110,18 +110,18 @@ public class IdentifcationOfCar {
         chosenVehicleBrandUpper = chosenVehicleBrand.toUpperCase();
 
         //for loop which iterates on object's value in table.
-        for (int i = 0; i < arr.length(); i++) {
-            JSONObject obj1 = arr.getJSONObject(i);
-            String id = obj1.getString("id");
-            String name = obj1.getString("name");
+        for (int i = 0; i < arrayFromJSONObject.length(); i++) {
+            JSONObject searchedObject = arrayFromJSONObject.getJSONObject(i);
+            String id = searchedObject.getString("id");
+            String name = searchedObject.getString("name");
             /* unused variable, left for information purpose
-            String nameClear = obj1.getString("name_clear");
+            String nameClear = searchedObject.getString("name_clear");
             */
-            Boolean hasImage = obj1.getBoolean("has_image");
-            String link = obj1.getString("link");
+            Boolean hasImage = searchedObject.getBoolean("has_image");
+            String link = searchedObject.getString("link");
 
             //new condition for finding vehicle which user is searching in database
-            if (obj1.getString("name").contains(chosenVehicleBrandUpper)) {
+            if (searchedObject.getString("name").contains(chosenVehicleBrandUpper)) {
                 System.out.println(MENU_CHOSEN_VEHICLE);
                 System.out.print(MENU_VEHICLE_ID + id + MENU_VEHICLE_NAME + name);
 
@@ -148,15 +148,15 @@ public class IdentifcationOfCar {
         //Scanner for user input
         Scanner scan = new Scanner(System.in);
         // Creating object from JSON file
-        JSONObject obj = new JSONObject(jsonData);
+        JSONObject objectFromJSON = new JSONObject(jsonData);
 
        /* Unnecessary line of code, left for information purpose
         // Printing out first object from JSON file
-        System.out.println("Data type: " + obj.getString("datatype"));
+        System.out.println("Data type: " + objectFromJSON.getString("datatype"));
        */
 
         // Getting an array from object value using its key
-        JSONArray arr = obj.getJSONArray("data");
+        JSONArray arrayFromJSONObject = objectFromJSON.getJSONArray("data");
 
         //Starting inner menu (menu of this class)
         System.out.println(MENU_QUESTION_ID_FOR_USER);
@@ -166,18 +166,18 @@ public class IdentifcationOfCar {
         chosenVehicleBrandLower = chosenVehicleBrand.toLowerCase();
 
         //for loop which iterates on object's value in table.
-        for (int i = 0; i < arr.length(); i++) {
-            JSONObject obj1 = arr.getJSONObject(i);
-            String id = obj1.getString("id");
-            String name = obj1.getString("name");
+        for (int i = 0; i < arrayFromJSONObject.length(); i++) {
+            JSONObject searchedObject = arrayFromJSONObject.getJSONObject(i);
+            String id = searchedObject.getString("id");
+            String name = searchedObject.getString("name");
             /* unused variable, left for information purpose
-            String nameClear = obj1.getString("name_clear");
+            String nameClear = searchedObject.getString("name_clear");
             */
-            Boolean hasImage = obj1.getBoolean("has_image");
-            String link = obj1.getString("link");
+            Boolean hasImage = searchedObject.getBoolean("has_image");
+            String link = searchedObject.getString("link");
 
             //new condition for finding vehicle which user is searching in database
-            if (obj1.getString("id").equals(chosenVehicleBrandLower)) {
+            if (searchedObject.getString("id").equals(chosenVehicleBrandLower)) {
                 System.out.println(MENU_CHOSEN_VEHICLE);
                 System.out.print(MENU_VEHICLE_ID + id + MENU_VEHICLE_NAME + name);
 
