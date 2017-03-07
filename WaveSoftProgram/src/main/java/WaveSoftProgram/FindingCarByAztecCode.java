@@ -74,6 +74,9 @@ public class FindingCarByAztecCode {
                 System.out.println(" ");
                 System.out.println(" ");
                 System.out.println("-----------------------------------\n");
+
+                FindingCarByAztecCode carByAztec2 = new FindingCarByAztecCode();
+                carByAztec2.jsonHandler();
                 break;
 
 
@@ -91,8 +94,7 @@ public class FindingCarByAztecCode {
 
         }
 
-        FindingCarByAztecCode carByAztec2 = new FindingCarByAztecCode();
-        carByAztec2.jsonHandler();
+
 
 
     }

@@ -56,7 +56,8 @@ public class Menu {
 
                 case '1':
                     System.out.println("1. WYBRAŁEŚ Znajdź część której szukasz na Allegro.\n");
-                    PartParser partParser = new PartParser();
+                    FindingPartOnAllegro allegro = new FindingPartOnAllegro();
+                    allegro.findPartMenu();
 
                     break;
                 case '2':
@@ -66,6 +67,10 @@ public class Menu {
                     break;
                 case '3':
 
+                    IdentifcationOfCar idOfCar = new IdentifcationOfCar();
+
+                    idOfCar.jsonFileReader();
+                    idOfCar.jsonHandler();
 
                     break;
                 case '4':
