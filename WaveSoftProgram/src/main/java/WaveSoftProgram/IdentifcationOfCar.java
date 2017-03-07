@@ -31,6 +31,7 @@ public class IdentifcationOfCar {
     private static String chosenVehicleBrand;
     private static String chosenVehicleBrandUpper;
     private static String chosenVehicleBrandLower;
+    private static String USER_INPUT_FAILURE = "Nie ma takiego pojazdu! Spróbuj jeszcze raz!";
 
     //method which will be reading json files ("cars catalogue")
     public static void jsonFileReader() throws IOException {
@@ -135,6 +136,9 @@ public class IdentifcationOfCar {
                 }
 
                 System.out.println(VEHICLE_LINK + link + "\n");
+            } else {
+                System.out.println(USER_INPUT_FAILURE + "\n");
+                break;
             }
         }
     }
@@ -187,6 +191,9 @@ public class IdentifcationOfCar {
                     System.out.print(VEHICLE_IMAGE + VEHICLE_IMAGE_TRUE);
                 }
                 System.out.println(VEHICLE_LINK + link + "\n");
+                } else {
+                System.out.println(USER_INPUT_FAILURE + "\n");
+                break;
                 }
             }
         }
