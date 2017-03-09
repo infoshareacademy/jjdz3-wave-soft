@@ -5,6 +5,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -16,7 +18,7 @@ public class IdentifcationOfCar {
     //variable from json file which is passed to jsonFileReader() method
     private static String jsonData = "";
 
-    //variables for innner menu
+    //variables for inner menu
     private static String MENU_QUESTION_BRAND_FOR_USER = "Podaj markę samochodu której szukasz";
     private static String MENU_QUESTION_ID_FOR_USER = "Podaj ID samochodu którego szukasz";
     private static String MENU_CHOSEN_VEHICLE = "Wybrany pojazd:";
@@ -31,7 +33,7 @@ public class IdentifcationOfCar {
     private static String chosenVehicleBrand;
     private static String chosenVehicleBrandUpper;
     private static String chosenVehicleBrandLower;
-    private static String USER_INPUT_FAILURE = "Nie ma takiego pojazdu! Spróbuj jeszcze raz!";
+    private static String USER_INPUT_FAILURE = "\nNie ma takiego pojazdu! Spróbuj jeszcze raz!\n";
 
     //method which will be reading json files ("cars catalogue")
     public static void jsonFileReader() throws IOException {
@@ -43,7 +45,6 @@ public class IdentifcationOfCar {
         while ((line = br.readLine()) != null) {
             jsonData += line + "\n";
         }
-
         br.close();
     }
 
@@ -101,46 +102,44 @@ public class IdentifcationOfCar {
 
         // Getting an array from object value using its key
         JSONArray arrayFromJSONObject = objectFromJSON.getJSONArray("data");
-
         //Starting inner menu (menu of this class)
         System.out.println(MENU_QUESTION_BRAND_FOR_USER);
         //assign user input
         chosenVehicleBrand = scan.nextLine();
         //to avoid errors - setting input to upper case
         chosenVehicleBrandUpper = chosenVehicleBrand.toUpperCase();
-
+        //List created to validate users input
+        List<String> foundedVehicleByName = new ArrayList<String>();
         //for loop which iterates on object's value in table.
         for (int i = 0; i < arrayFromJSONObject.length(); i++) {
             JSONObject searchedObject = arrayFromJSONObject.getJSONObject(i);
             String id = searchedObject.getString("id");
-            String name = searchedObject.getString("name");
-            /* unused variable, left for information purpose
-            String nameClear = searchedObject.getString("name_clear");
-            */
-            Boolean hasImage = searchedObject.getBoolean("has_image");
-            String link = searchedObject.getString("link");
+                String name = searchedObject.getString("name");
+                Boolean hasImage = searchedObject.getBoolean("has_image");
+                String link = searchedObject.getString("link");
 
-            //new condition for finding vehicle which user is searching in database
-            if (searchedObject.getString("name").contains(chosenVehicleBrandUpper)) {
-                System.out.println(MENU_CHOSEN_VEHICLE);
-                System.out.print(MENU_VEHICLE_ID + id + MENU_VEHICLE_NAME + name);
+                //new condition for finding vehicle which user is searching in database
+                if (searchedObject.getString("name").contains(chosenVehicleBrandUpper)) {
+                    foundedVehicleByName.add(chosenVehicleBrandUpper);
+                    System.out.println(MENU_CHOSEN_VEHICLE);
+                    System.out.print(MENU_VEHICLE_ID + id + MENU_VEHICLE_NAME + name);
 
-                //next condition for checking if given vehicle have
-                //photo (value "true" for key "has_image") it will be
-                //printed on the screen (later, when project will be
-                //in more advanced phase)
-                if (hasImage == false) {
-                    System.out.print(VEHICLE_IMAGE + VEHICLE_IMAGE_FALSE);
-                } else {
-                    System.out.print(VEHICLE_IMAGE + VEHICLE_IMAGE_TRUE);
+                    //next condition for checking if given vehicle have
+                    //photo (value "true" for key "has_image") it will be
+                    //printed on the screen (later, when project will be
+                    //in more advanced phase)
+                    if (hasImage == false) {
+                        System.out.print(VEHICLE_IMAGE + VEHICLE_IMAGE_FALSE);
+                    } else {
+                        System.out.print(VEHICLE_IMAGE + VEHICLE_IMAGE_TRUE);
+                    }
+                    System.out.println(VEHICLE_LINK + link + "\n");
                 }
-
-                System.out.println(VEHICLE_LINK + link + "\n");
-            } else {
-                System.out.println(USER_INPUT_FAILURE + "\n");
-                break;
-            }
         }
+                //if statement for validation user input
+                if (foundedVehicleByName.isEmpty()) {
+                    System.out.println(USER_INPUT_FAILURE);
+                }
     }
 
     public static void searchById() throws JSONException {
@@ -165,19 +164,18 @@ public class IdentifcationOfCar {
         //to avoid errors - setting input to upper case
         chosenVehicleBrandLower = chosenVehicleBrand.toLowerCase();
 
+        List<String> foundedVehicleById = new ArrayList<String>();
         //for loop which iterates on object's value in table.
         for (int i = 0; i < arrayFromJSONObject.length(); i++) {
             JSONObject searchedObject = arrayFromJSONObject.getJSONObject(i);
             String id = searchedObject.getString("id");
             String name = searchedObject.getString("name");
-            /* unused variable, left for information purpose
-            String nameClear = searchedObject.getString("name_clear");
-            */
             Boolean hasImage = searchedObject.getBoolean("has_image");
             String link = searchedObject.getString("link");
 
             //new condition for finding vehicle which user is searching in database
             if (searchedObject.getString("id").equals(chosenVehicleBrandLower)) {
+                foundedVehicleById.add(chosenVehicleBrandLower);
                 System.out.println(MENU_CHOSEN_VEHICLE);
                 System.out.print(MENU_VEHICLE_ID + id + MENU_VEHICLE_NAME + name);
 
@@ -191,10 +189,11 @@ public class IdentifcationOfCar {
                     System.out.print(VEHICLE_IMAGE + VEHICLE_IMAGE_TRUE);
                 }
                 System.out.println(VEHICLE_LINK + link + "\n");
-                } else {
-                System.out.println(USER_INPUT_FAILURE + "\n");
-                break;
                 }
-            }
         }
+            //if statement for validation user input
+            if (foundedVehicleById.isEmpty()) {
+                System.out.println(USER_INPUT_FAILURE);
+            }
+    }
     }
