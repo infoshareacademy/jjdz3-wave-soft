@@ -1,4 +1,5 @@
 package WaveSoftProgram.parts;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -10,27 +11,25 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-/*import org.codehaus.jackson.JsonGenerationException;
-import org.codehaus.jackson.JsonParseException;
-import org.codehaus.jackson.map.JsonMappingException;
-import org.codehaus.jackson.map.ObjectMapper;*/
+
 /**
  * Created by piotr_gy on 22.02.17.
  */
 public class PartParser {
-private List<PlaceInCar>placeInCarList = new ArrayList<PlaceInCar>();
+    private List<PlaceInCar> placeInCarList = new ArrayList<PlaceInCar>();
+
 
     public PartParser() {
 
         try {
-        ObjectMapper mapper = new ObjectMapper(); /*./WaveSoftProgram/*/
+            ObjectMapper mapper = new ObjectMapper(); /*./WaveSoftProgram/*/
 
-            JsonNode mainArray = mapper.readTree(new File("src/main/resources/parts.json"));
-            JsonNode rootArray = mainArray.path("place_in_car");
+            JsonNode mainNode = mapper.readTree(new File("src/main/resources/parts.json"));
+            JsonNode rootArray = mainNode.path("place_in_car");
 
 
             //odczytaj każdy element place_in_car
-            for(JsonNode rootNode : rootArray){
+            for (JsonNode rootNode : rootArray) {
                 //odczytaj name_of_place
                 PlaceInCar placeInCar = new PlaceInCar();
                 JsonNode nameOfPlaceNode = rootNode.path("name_of_place");
@@ -38,20 +37,24 @@ private List<PlaceInCar>placeInCarList = new ArrayList<PlaceInCar>();
 
 
                 //odczytaj każdy element part_category
-                JsonNode partCategoryArray = rootArray.path("part_category");
-                List<PartCategory>partCategoryList = new ArrayList<PartCategory>();
+                JsonNode partCategoryArray = rootNode.path("part_category");
+                List<PartCategory> partCategoryList = new ArrayList<PartCategory>();
+                placeInCar.setCategories(partCategoryList);
 
-                for(JsonNode partCategoryNode : partCategoryArray){
+
+                for (JsonNode partCategoryNode : partCategoryArray) {
                     //odczytaj category_name
                     PartCategory partCategory = new PartCategory();
                     JsonNode categoryNameNode = partCategoryNode.path("category_name");
                     partCategory.setCategoryName(categoryNameNode.asText());
 
                     //odczytaj każdy element parts
-                    JsonNode partsArray = partCategoryArray.path("parts");
-                    List<Part>partList = new ArrayList<Part>();
+                    JsonNode partsArray = partCategoryNode.path("parts");
+                    List<Part> partList = new ArrayList<Part>();
+                    partCategory.setParts(partList);
 
-                    for (JsonNode partNode : partsArray){
+
+                    for (JsonNode partNode : partsArray) {
                         Part part = new Part();
 
                         //odczytaj part_id
@@ -67,15 +70,19 @@ private List<PlaceInCar>placeInCarList = new ArrayList<PlaceInCar>();
                 }
 
                 placeInCarList.add(placeInCar);
+
             }
 
+        } catch (JsonParseException e) {
+            e.printStackTrace();
+        } catch (JsonMappingException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        catch (JsonParseException e) { e.printStackTrace(); }
-        catch (JsonMappingException e) { e.printStackTrace(); }
-        catch (IOException e) { e.printStackTrace(); }
 
 
-
+        System.out.println(getPlaceInCarList());
     }
 
     public List<PlaceInCar> getPlaceInCarList() {
