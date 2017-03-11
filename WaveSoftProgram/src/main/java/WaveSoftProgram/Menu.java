@@ -54,7 +54,10 @@ public class Menu {
             switch (choice) {
 
                 case '1':
-                    System.out.println("1. WYBRAŁEŚ Znajdź część której szukasz na Allegro.\n");
+                    FindingAllegroCategory allegroCategory = new FindingAllegroCategory();
+                    allegroCategory.jsonFileReader();
+                    allegroCategory.jsonHandler();
+
 
                     break;
                 case '2':
