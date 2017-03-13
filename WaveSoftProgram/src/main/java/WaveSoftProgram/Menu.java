@@ -58,6 +58,7 @@ public class Menu {
                     System.out.println("1. WYBRAŁEŚ Znajdź część której szukasz na Allegro.\n");
                     FindingPartOnAllegro allegro = new FindingPartOnAllegro();
                     allegro.findPartMenu();
+                    this.showMenu();
 
                     break;
                 case '2':
