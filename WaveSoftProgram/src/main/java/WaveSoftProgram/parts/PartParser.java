@@ -22,9 +22,12 @@ public class PartParser {
     public PartParser() {
 
         try {
-            ObjectMapper mapper = new ObjectMapper(); /*./WaveSoftProgram/*/
+            ObjectMapper mapper = new ObjectMapper(); /*./WaveSoftProgram "src/main/resources/parts.json"/*/
 
-            JsonNode mainNode = mapper.readTree(new File("src/main/resources/parts.json"));
+            ClassLoader classLoader = this.getClass().getClassLoader();
+            String filePath = classLoader.getResource("parts.json").getFile();
+
+            JsonNode mainNode = mapper.readTree(new File(filePath));
             JsonNode rootArray = mainNode.path("place_in_car");
 
 
@@ -82,7 +85,7 @@ public class PartParser {
         }
 
 
-        System.out.println(getPlaceInCarList());
+        //System.out.println(getPlaceInCarList());
     }
 
     public List<PlaceInCar> getPlaceInCarList() {
