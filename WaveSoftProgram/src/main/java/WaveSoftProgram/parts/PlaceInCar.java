@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * Created by piotr_gy on 22.02.17.
+ * Class describes an object of place in the car, where an autopart is broken.
  */
 public class PlaceInCar {
     private String nameOfPlace;
@@ -17,18 +17,34 @@ public class PlaceInCar {
         this.categories = categories;
     }
 
+    /**
+     * Standard POJO getter.
+     * @return Reference to the name of place in the car, where an autopart is broken.
+     */
     public String getNameOfPlace() {
         return nameOfPlace;
     }
 
+    /**
+     * Standard POJO getter.
+     * @return Reference to the list of categories belong to this place in the car.
+     */
     public List<PartCategory> getCategories() {
         return categories;
     }
 
+    /**
+     * Standard POJO setter.
+     * @param nameOfPlace Sets the name of place in the car, where an autopart is broken.
+     */
     public void setNameOfPlace(String nameOfPlace) {
         this.nameOfPlace = nameOfPlace;
     }
 
+    /**
+     * Standard POJO setter.
+     * @param categories Sets the list of categories belong to this place in the car.
+     */
     public void setCategories(List<PartCategory> categories) {
         this.categories = categories;
     }
