@@ -13,12 +13,15 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 
 /**
- * Created by piotr_gy on 22.02.17.
+ * Class describes an object of a questionnaire for searching a car part and creating it from a *.json file.
  */
 public class PartParser {
     private List<PlaceInCar> placeInCarList = new ArrayList<PlaceInCar>();
 
-
+    /**
+     * Creates an object of a questionnaire. Parses a json file and builds a tree model.
+     * @see <a href="https://www.mkyong.com/java/jackson-tree-model-example/">Example of Jackson Tree Model</a>     *
+     */
     public PartParser() {
 
         try {
@@ -88,6 +91,10 @@ public class PartParser {
         //System.out.println(getPlaceInCarList());
     }
 
+    /**
+     * Standard POJO getter.
+     * @return Reference to the list of places in the car, where an autopart is broken.
+     */
     public List<PlaceInCar> getPlaceInCarList() {
         return placeInCarList;
     }
