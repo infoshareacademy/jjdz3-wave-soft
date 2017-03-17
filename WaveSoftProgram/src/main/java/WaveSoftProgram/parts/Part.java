@@ -1,7 +1,7 @@
 package WaveSoftProgram.parts;
 
 /**
- * Created by piotr_gy on 22.02.17.
+ * Class describes an object of an autopart.
  */
 public class Part {
     private String partId;
@@ -15,18 +15,34 @@ public class Part {
         this.searchPhrase = searchPhrase;
     }
 
+    /**
+     * Standard POJO getter.
+     * @return Reference to the name of an autopart.
+     */
     public String getPartId() {
         return partId;
     }
 
+    /**
+     * Standard POJO getter.
+     * @return Reference to the searching phrase of an autopart.
+     */
     public String getSearchPhrase() {
         return searchPhrase;
     }
 
+    /**
+     * Standard POJO setter.
+     * @param partId Sets the name of an autopart.
+     */
     public void setPartId(String partId) {
         this.partId = partId;
     }
 
+    /**
+     * Standard POJO setter.
+     * @param searchPhrase Sets the searching phrase of an autopart.
+     */
     public void setSearchPhrase(String searchPhrase) {
         this.searchPhrase = searchPhrase;
     }
