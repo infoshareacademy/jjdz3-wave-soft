@@ -1,0 +1,55 @@
+﻿{
+"place_in_car":[
+{
+"name_of_place":"nadwozie", "part_category":[
+{"category_name":"oświetlenie", "parts":[{"part_id":"reflektor przedni prawy", "search_phrase":"reflektor prawy przód"},
+{"part_id":"lampa tylna lewa", "search_phrase":"lampa lewa tył"},
+{"part_id":"lewy kierunkowskaz", "search_phrase":"kierunkowskaz lewy"}
+]},
+{"category_name":"szyby", "parts":[{"part_id":"szyba przednia", "search_phrase":"szyba czołowa"},
+{"part_id":"szyba tylna", "search_phrase":"szyba tylna"},
+{"part_id":"szyba prawych drzwi", "search_phrase":"szyba drzwi prawe"}
+]},
+{"category_name":"drzwi", "parts":[{"part_id":"drzwi prawe przednie", "search_phrase":"drzwi prawe przód"},
+{"part_id":"drzwi lewe tylne", "search_phrase":"drzwi lewe tył"},
+{"part_id":"drzwi tylne - klapa", "search_phrase":"tylna klapa"}
+]}
+]
+},
+{
+"name_of_place":"podwozie", "part_category":[
+{"category_name":"amortyzacja", "parts":[{"part_id":"amortyzator tylny", "search_phrase":"amortyzator oś tylna"},
+{"part_id":"sprężyna z przodu", "search_phrase":"sprężyna zawieszenia przód"},
+{"part_id":"osłony amortyzatorów z przodu", "search_phrase":"osłony amortyzatorów oś przednia"}
+]},
+{"category_name":"wahacze i łożyska kół", "parts":[{"part_id":"wahacz zawieszenia z przodu", "search_phrase":"wahacz zawieszenia oś przednia"},
+{"part_id":"piasta przedniego koła", "search_phrase":"piasta oś przednia"},
+{"part_id":"tuleja wahacza z tyłu", "search_phrase":"tuleja wahacza oś tylna"}
+]},
+{"category_name":"hamulce", "parts":[{"part_id":"klocki hamulcowe z przodu", "search_phrase":"klocki hamulcowe oś przednia"},
+{"part_id":"tarcze hamulcowe z przodu", "search_phrase":"tarcze hamulcowe oś przednia"},
+{"part_id":"pompa hamulcowa", "search_phrase":"pompa hamulcowa"}
+]}
+]
+
+},
+{
+"name_of_place":"silnik",  "part_category":[
+{"category_name":"układ chłodzenia", "parts":[{"part_id":"chłodnica", "search_phrase":"chłodnica wody"},
+{"part_id":"termostat", "search_phrase":"termostat układu chłodzenia"},
+{"part_id":"wentylator chłodnicy", "search_phrase":"Wentylator chłodnicy silnika"}
+]},
+{"category_name":"układ zapłonowy", "parts":[{"part_id":"świece", "search_phrase":"świeca zapłonowa"},
+{"part_id":"cewka zapłonowa", "search_phrase":"cewka zapłonowa"},
+{"part_id":"przewody zapłonowe", "search_phrase":"przewody zapłonowe"}
+]},
+{"category_name":"filtry", "parts":[{"part_id":"filtr paliwa", "search_phrase":"filtr paliwa"},
+{"part_id":"filtr oleju", "search_phrase":"filtr oleju"},
+{"part_id":"filtr powietrza", "search_phrase":"filtr powietrza"}
+]}
+]
+
+}
+]
+
+}
