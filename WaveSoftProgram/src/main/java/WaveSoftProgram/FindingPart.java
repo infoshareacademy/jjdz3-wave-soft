@@ -86,17 +86,24 @@ public class FindingPart {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        switch (choice) {
+        try {
+            switch (choice) {
 
-            case '1':
-                choice = 0;
-                break;
-            case '2':
-                choice = 1;
-                break;
-            case '3':
-                choice = 2;
-                break;
+                case '1':
+                    choice = 0;
+                    break;
+                case '2':
+                    choice = 1;
+                    break;
+                case '3':
+                    choice = 2;
+                    break;
+                default:
+                    System.out.println("Wybierz z dostępnych opcji.");
+                    break;
+            }
+        }catch (java.util.InputMismatchException err) {
+            System.out.println("\nWybierz z dostępnych opcji.");
         }
         return choice;
     }
