@@ -2,19 +2,21 @@ package WaveSoftProgram;
 
 //klasa odpowiadająca za menu programu
 
+import WaveSoftProgram.parts.PartParser;
 import org.json.JSONException;
 
 import java.io.IOException;
 
 public class Menu {
 
-    private String menuTekst1 = "1. Znajdź część której szukasz na Allegro.\n";
-    private String menuTekst2 = "2. Znajdź część której szukasz na ebay.\n";
-    private String menuTekst3 = "3. Identyfikacja auta po serii pytań. \n";
-    private String menuTekst4 = "4. Identyfikacja pojazdu po kodzie Aztec. \n";
-    private String menuTekst5 = "5. Szybka diagnostyka samochodowa.  \n";
-    private String menuTekst6 = "   Wybierz numer instrukcji. \n";
-    private String menuTekst7 = "   Powrót do menu głównego z lub zakończenie \n   działania programu q.  ";
+    private String menuTekst1 = "1. Znajdź kategorię części której szukasz na Allegro.\n";
+    private String menuTekst2 = "2. Znajdź część której szukasz na Allegro.\n";
+    private String menuTekst3 = "3. Znajdź część której szukasz na ebay.\n";
+    private String menuTekst4 = "4. Identyfikacja auta po serii pytań. \n";
+    private String menuTekst5 = "5. Identyfikacja pojazdu po kodzie Aztec. \n";
+    private String menuTekst6 = "6. Szybka diagnostyka samochodowa.  \n";
+    private String menuTekst7 = "   Wybierz numer instrukcji. \n";
+    private String menuTekst8 = "   Powrót do menu głównego z lub zakończenie \n   działania programu q.  ";
 
 
     void showLogo() {
@@ -44,64 +46,76 @@ public class Menu {
         System.out.println(menuTekst5);
         System.out.println(menuTekst6);
         System.out.println(menuTekst7);
+        System.out.println(menuTekst8);
 
 
     }
-         void menuLogic(int choice) throws IOException, JSONException {
+    void menuLogic(int choice) throws IOException, JSONException {
 
-             //metoda obsługująca wybór wprowadzony przez użytkownika
+        //metoda obsługująca wybór wprowadzony przez użytkownika
 
-            switch (choice) {
+        switch (choice) {
 
-                case '1':
-                    System.out.println("1. WYBRAŁEŚ Znajdź część której szukasz na Allegro.\n");
+            case '1':
 
-                    break;
-                case '2':
-                    System.out.println("2. WYBRAŁEŚ Znajdź część której szukasz na ebay.\n");
+                FindingAllegroCategory allegroCategory = new FindingAllegroCategory();
+                allegroCategory.jsonFileReader();
+                allegroCategory.jsonHandler();
 
 
-                    break;
-                case '3':
+                break;
+            case '2':
 
-                    IdentifcationOfCar idOfCar = new IdentifcationOfCar();
+                FindingPartOnAllegro allegro = new FindingPartOnAllegro();
+                allegro.findPartMenu();
+                this.showMenu();
 
-                    idOfCar.jsonFileReader();
-                    idOfCar.menu2();
+                break;
+            case '3':
 
-                    break;
-                case '4':
+                System.out.println("2. WYBRAŁEŚ Znajdź część której szukasz na ebay.\n");
 
-                    FindingCarByAztecCode carByAztec = new FindingCarByAztecCode();
 
-                    carByAztec.jsonFileReader();
-                    carByAztec.jsonHandler();
+                break;
+            case '4':
 
-                    break;
-                case '5':
-                    System.out.println("5. WYBRAŁEŚ Szybka diagnostyka samochodowa  \n");
+                IdentifcationOfCar idOfCar = new IdentifcationOfCar();
+                idOfCar.jsonFileReader();
+                idOfCar.menu2();
 
-                    break;
 
-            }
 
-        }
+                break;
+            case '5':
+                FindingCarByAztecCode carByAztec = new FindingCarByAztecCode();
+                carByAztec.jsonFileReader();
+                carByAztec.jsonHandler();
 
-        //metoda walidująca wybór wprowadzony przez użytkownika
+                break;
+            case '6':
+                System.out.println("6. WYBRAŁEŚ Szybka diagnostyka samochodowa  \n");
 
-        boolean isValid(int ch) {
-            if(ch < '1' | ch > '7' & ch != 'q' & ch != 'z') return false;
-            else return true;
-        }
-
-        //metoda wywoływana w przypadku wciśnięcia q
-        void progEnding() {
-
-            System.out.println("");
-            System.out.println("   Zakończono...\n");
-            System.out.println("-----------------------------------------------------");
+                break;
 
         }
+
+    }
+
+    //metoda walidująca wybór wprowadzony przez użytkownika
+
+    boolean isValid(int ch) {
+        if(ch < '1' | ch > '7' & ch != 'q' & ch != 'z') return false;
+        else return true;
+    }
+
+    //metoda wywoływana w przypadku wciśnięcia q
+    void progEnding() {
+
+        System.out.println("");
+        System.out.println("   Zakończono...\n");
+        System.out.println("-----------------------------------------------------");
+
+    }
 
 
 
