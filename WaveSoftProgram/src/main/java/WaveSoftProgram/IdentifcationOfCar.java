@@ -6,6 +6,7 @@ import org.json.JSONObject;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -28,12 +29,18 @@ public class IdentifcationOfCar {
     private static String VEHICLE_LINK = "\nLink do historii przeglądów pojazdu: ";
     private static String VEHICLE_IMAGE_TRUE = "(Wyświetlenie zdjęcia pojazdu)";
     private static String VEHICLE_IMAGE_FALSE = "Brak zdjęcia pojazdu w bazie danych";
+    private static String INSTRUCTION_MENU_SEARCH_BY_NAME = "Wyszukaj po nazwie samochodu - wciśnij 1";
+    private static String INSTRUCTION_MENU_SEARCH_BY_ID = "Wyszukaj po ID samochodu - wciśnij 2";
+    private static String INSTRUCTION_MENU_BACK_TO_MAIN_MENU = "Wyjdź do głównego menu - wciśnij 3";
+    private static String INSTRUCTION_MENU_EXIT = "zakończ program - wciśnij 4";
+    private static String QUESTION_FOR_USER = "Co wybierasz ?";
 
     //variable for user input
     private static String chosenVehicleBrand;
     private static String chosenVehicleBrandUpper;
     private static String chosenVehicleBrandLower;
     private static String USER_INPUT_FAILURE = "\nNie ma takiego pojazdu! Spróbuj jeszcze raz!\n";
+    private static String USER_INPUT_FAILURE_NUMBER_TWO = "\nPodałeś złą wartość! Spróbuj jeszcze raz!\n";
 
     //method which will be reading json files ("cars catalogue")
     public static void jsonFileReader() throws IOException {
@@ -55,37 +62,42 @@ public class IdentifcationOfCar {
         int choice;
         while(!quit){
             printInstructions();
-            System.out.println("Co wybierasz ?");
-            Menu menuAutoApp = new Menu();
+            System.out.println(QUESTION_FOR_USER);
             Scanner scanner = new Scanner(System.in);
-            //selecting list of options
-            choice = scanner.nextInt();
-            //clear input buffer
-            scanner.nextLine();
-            switch(choice){
-                case 1:
-                    searchByName();
-                    break;
-                case 2:
-                    searchById();
-                    break;
-                case 3:
-                    menuAutoApp.showMenu();
-                    quit = true;
-                    break;
-                case 4:
-                    menuAutoApp.progEnding();
-                    quit = true;
-                    break;
+            try {
+                //selecting list of options
+                Menu menuAutoApp = new Menu();
+                choice = scanner.nextInt();
+                //clear input buffer
+                scanner.nextLine();
+               switch (choice) {
+                   case 1:
+                       searchByName();
+                       break;
+                   case 2:
+                       searchById();
+                       break;
+                   case 3:
+                       menuAutoApp.showMenu();
+                       quit = true;
+                       break;
+                   case 4:
+                       menuAutoApp.progEnding();
+                       quit = true;
+                       break;
+               }
+            } catch (InputMismatchException e) {
+                System.out.println(USER_INPUT_FAILURE_NUMBER_TWO);
+//              System.err.println("InputMismatchException: " + e.getMessage());
             }
         }
     }
 
     public static void printInstructions() {
-        System.out.println("Wyszukaj po nazwie samochodu - wciśnij 1");
-        System.out.println("Wyszukaj po ID samochodu - wciśnij 2");
-        System.out.println("Wyjdź do głównego menu - wciśnij 3");
-        System.out.println("zakończ program - wciśnij 4");
+        System.out.println(INSTRUCTION_MENU_SEARCH_BY_NAME);
+        System.out.println(INSTRUCTION_MENU_SEARCH_BY_ID);
+        System.out.println(INSTRUCTION_MENU_BACK_TO_MAIN_MENU);
+        System.out.println(INSTRUCTION_MENU_EXIT);
     }
 
     public static void searchByName() throws JSONException {
