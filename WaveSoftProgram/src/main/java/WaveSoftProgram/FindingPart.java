@@ -10,13 +10,13 @@ import java.io.IOException;
 /**
  * Created by piotr_gy on 01.03.17.
  */
-public class FindingPartOnAllegro {
+public class FindingPart {
 
     private PartParser partParser;
     private int placeIndex, categoryIndex, partIndex;
 
-    public void findPartMenu() {
-        partParser = new PartParser();
+    public void findPartMenu(String fileName) {
+        partParser = new PartParser(fileName);
 
         String stage1 = "miejsce samochodu, gdzie znajduje się zepsuta część:";
         String stage2 = "kategorię części:";
