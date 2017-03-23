@@ -22,13 +22,13 @@ public class PartParser {
      * Creates an object of a questionnaire. Parses a json file and builds a tree model.
      * @see <a href="https://www.mkyong.com/java/jackson-tree-model-example/">Example of Jackson Tree Model</a>     *
      */
-    public PartParser() {
+    public PartParser(String fileName) {
 
         try {
             ObjectMapper mapper = new ObjectMapper(); /*./WaveSoftProgram "src/main/resources/parts.json"/*/
 
             ClassLoader classLoader = this.getClass().getClassLoader();
-            String filePath = classLoader.getResource("parts.json").getFile();
+            String filePath = classLoader.getResource(fileName).getFile();
 
             JsonNode mainNode = mapper.readTree(new File(filePath));
             JsonNode rootArray = mainNode.path("place_in_car");
