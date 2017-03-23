@@ -1,0 +1,55 @@
+﻿{
+"place_in_car":[
+{
+"name_of_place":"Nadwozie", "part_category":[
+{"category_name":"Klapki i korki wlewu paliwa", "parts":[{"part_id":"Korek wlewu paliwa", "search_phrase":"Fuel Filler Cap"},
+{"part_id":"Klapka wlewu paliwa", "search_phrase":"Fuel Filler Flap"},
+{"part_id":"Tabliczka informacyjna paliwa", "search_phrase":"Fuel Filler Warning Badge"}
+]},
+{"category_name":"Lusterka zewnętrzne", "parts":[{"part_id":"Obudowa lusterka", "search_phrase":"Wing mirror cover"},
+{"part_id":"Podgdrzewane szkło lusterka", "search_phrase":"Heated Mirror"},
+{"part_id":"Lampka kierunkowskazu lusterkowego", "search_phrase":"Mirror Indicator Repeater"}
+]},
+{"category_name":"Drzwi", "parts":[{"part_id":"Drzwi przesuwne", "search_phrase":"Side sliding door"},
+{"part_id":"Schowek drzwiowy", "search_phrase":"Extra storage"},
+{"part_id":"Silnik zamka centralnego", "search_phrase":"Central locking motor"}
+]}
+]
+},
+{
+"name_of_place":"Podwozie", "part_category":[
+{"category_name":"Amortyzacja", "parts":[{"part_id":"Amortyzator tylny", "search_phrase":"Rear shock absorber"},
+{"part_id":"Mieszki zawieszenia pneumatycznego", "search_phrase":"Air suspension spring bags"},
+{"part_id":"Osłony amortyzatorów z przodu", "search_phrase":"Shock absorber dust cover front"}
+]},
+{"category_name":"Wahacze i łożyska kół", "parts":[{"part_id":"Wahacze zawieszenia z przodu", "search_phrase":"Front wishbones suspension arms"},
+{"part_id":"Łożyska kół tylnych", "search_phrase":"Rear wheel bearings"},
+{"part_id":"Tuleja wahacza z tyłu", "search_phrase":"Rear Control Arm Bush"}
+]},
+{"category_name":"Hamulce", "parts":[{"part_id":"Klocki hamulcowe z przodu", "search_phrase":"Front Brake Pad Set"},
+{"part_id":"Tarcze hamulcowe z przodu", "search_phrase":"Front Brake Discs"},
+{"part_id":"Pompa hamulcowa", "search_phrase":"Brake Master Cylinder"}
+]}
+]
+
+},
+{
+"name_of_place":"Silnik",  "part_category":[
+{"category_name":"Układ chłodzenia", "parts":[{"part_id":"Chłodnica", "search_phrase":"Radiator"},
+{"part_id":"Termostat", "search_phrase":"Thermostat"},
+{"part_id":"Wentylator chłodnicy", "search_phrase":"Cooling fan"}
+]},
+{"category_name":"Układ zapłonowy", "parts":[{"part_id":"Akumulator", "Battery":""},
+{"part_id":"Rozrusznik", "search_phrase":"Starter motor"},
+{"part_id":"Przewód ujemny akumulatora", "search_phrase":"Negative battery cable"}
+]},
+{"category_name":"filtry", "parts":[{"part_id":"Filtr paliwa", "search_phrase":"Fuel filter"},
+{"part_id":"Filtr oleju", "search_phrase":"Oil filter"},
+{"part_id":"Filtr powietrza", "search_phrase":"Air filter"}
+]}
+]
+
+}
+]
+
+}
