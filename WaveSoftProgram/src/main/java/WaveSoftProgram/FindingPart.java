@@ -78,33 +78,36 @@ public class FindingPart {
 
     private int readChoice() {
         char choice = 0, ignore;
-        try {
-            choice = (char) System.in.read();
-            do {
-                ignore = (char) System.in.read();
-            } while (ignore != '\n');
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        try {
-            switch (choice) {
-
-                case '1':
-                    choice = 0;
-                    break;
-                case '2':
-                    choice = 1;
-                    break;
-                case '3':
-                    choice = 2;
-                    break;
-                default:
-                    System.out.println("Wybierz z dostępnych opcji.");
-                    break;
+        boolean again = true;
+        do {
+            try {
+                choice = (char) System.in.read();
+                do {
+                    ignore = (char) System.in.read();
+                } while (ignore != '\n');
+            } catch (IOException e) {
+                e.printStackTrace();
             }
-        }catch (java.util.InputMismatchException err) {
-            System.out.println("\nWybierz z dostępnych opcji.");
+            if ((int) choice < '1' | (int) choice > '3')
+                System.out.println("Wybierz z dostępnych opcji.");
+            else again = false;
         }
+        while (again);
+
+        switch (choice) {
+
+            case '1':
+                choice = 0;
+                break;
+            case '2':
+                choice = 1;
+                break;
+            case '3':
+                choice = 2;
+                break;
+
+        }
+
         return choice;
     }
 }
