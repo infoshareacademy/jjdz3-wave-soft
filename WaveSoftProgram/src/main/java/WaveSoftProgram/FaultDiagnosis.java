@@ -2,15 +2,22 @@ package WaveSoftProgram;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import java.util.logging.Handler;
+import java.util.logging.Level;
+import java.util.logging.LogManager;
+import java.util.logging.Logger;
 
 public class FaultDiagnosis implements MenuTextOption {
+
+//    private static final Logger ROOT_LOGGER = LogManager.getLogManager().getLogger("");
+    private static final Logger LOGGER = Logger.getLogger(FaultDiagnosis.class.getName());
 
     public void faultDiagnosisMenu() {
         boolean quit = false;
         int choice;
         while(!quit){
             printMenuInstructions();
-            System.out.println(INSTRUCTION);
+            LOGGER.info(INSTRUCTION);
             Scanner scanner = new Scanner(System.in);
             try {
                 //selecting list of options
@@ -44,5 +51,13 @@ public class FaultDiagnosis implements MenuTextOption {
     public void printMenuInstructions() {
 
     }
+
+//    public void configureRootLogger() {
+//        ROOT_LOGGER.setLevel(Level.ALL);
+//
+//        for (Handler handler : ROOT_LOGGER.getHandlers()) {
+//            handler.setLevel(Level.ALL);
+//        }
+//    }
 
 }
