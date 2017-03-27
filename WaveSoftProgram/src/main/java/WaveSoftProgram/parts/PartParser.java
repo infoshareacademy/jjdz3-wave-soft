@@ -20,6 +20,7 @@ public class PartParser {
 
     /**
      * Creates an object of a questionnaire. Parses a json file and builds a tree model.
+     * @param fileName A name of json file which is a source of questions for a questionnaire.
      * @see <a href="https://www.mkyong.com/java/jackson-tree-model-example/">Example of Jackson Tree Model</a>     *
      */
     public PartParser(String fileName) {
