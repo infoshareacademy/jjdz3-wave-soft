@@ -1,0 +1,19 @@
+{
+  "datatype": "faults",
+  "data": [
+    {
+      "awaria":"wyciek oleju z silnika"
+      ,"opisAwarii":"Widoczne wycieki na silniku lub plamy oleju pod samochodem"
+      ,"potrzebnaCzesc":"uszczelki"
+    },
+    {
+      "awaria":"akumulator nie ładuje się podczas jazdy"
+      ,"opisAwarii":"Mimio tego, że samochód zazwyczaj daje się uruchomić to po wyczerpaniu się prądu w baterii, samochód się zatrzyma \n Jednym z objawów awarii alternetora jest kontrolka ładowania zapalająca się po rozruchu silnika. \n Jeśli zgaśnie, oznacza, że alternator podjął pracę. Jeśli nie- prawdopodobnie przestał ładować"
+      ,"potrzebnaCzesc":"alternator"
+    },
+    {
+      "awaria": "nadmierne grzanie się silnika",
+      "opisAwarii": "W przypadku, gdy płyn z chłodnicy nie ubywa, a silnik się nadal grzeje,\n przyczyną może być termostat, który zaciał się w pozycji zamkniętej. W takim przypadku układ chłodzenia \n dysponuje tylko małym obiegiem z pominięciem chłodnicy. Wystarczy zbliżyć dłoń do chłodnicy. \n Jeśli jest zimna, a silnik się grzeje, winny jest termostat. Można też sprawdzić górny wąż \n odprowadzający ciecz chłodżcą do chłodnicy. Jeśli jest zimny, przyczyna jest ta sama.",
+      "potrzebnaCzesc": "termostat"
+    }
+  ]}
