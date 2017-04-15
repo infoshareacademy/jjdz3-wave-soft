@@ -20,6 +20,7 @@ public class FaultDiagnosis extends JsonHandling implements MenuTextOption {
                 //selecting list of options
                 Menu menuAutoApp = new Menu();
                 FaultCatalogMenu faultCatalogMenu = new FaultCatalogMenu();
+                FaultIdentification faultIdentification = new FaultIdentification();
                 choice = scanner.nextInt();
                 //clear input buffer
                 scanner.nextLine();
@@ -28,7 +29,7 @@ public class FaultDiagnosis extends JsonHandling implements MenuTextOption {
                         faultCatalogMenu.faultDiagnosisMenu();
                         break;
                     case 2:
-                        /* TUTAJ DODAJ FUNKCJE DO WYSZUKIWANIA USTERKI */;
+                        faultIdentification.faultIdentificationMenu();
                         break;
                     case 3:
                         menuAutoApp.showMenu();
