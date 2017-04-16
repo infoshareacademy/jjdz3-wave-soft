@@ -46,8 +46,8 @@ public class FaultCatalogMenu extends JsonHandling implements MenuTextOption {
 
     private void printFaultCatalogMenuInstructions() {
         LOGGER.info("\n"
-                + INNER_MENU_FIRST_OPTION + "\n"
-                + INNER_MENU_SECOND_OPTION + "\n"
+                + FIRST_INNER_MENU_FIRST_OPTION + "\n"
+                + FIRST_INNER_MENU_SECOND_OPTION + "\n"
                 + THIRD_OPTION + "\n"
                 + FOURTH_OPTION + "\n"
                 + INSTRUCTION);

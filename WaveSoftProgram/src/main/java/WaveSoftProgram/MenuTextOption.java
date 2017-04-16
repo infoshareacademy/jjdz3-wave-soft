@@ -16,8 +16,12 @@ public interface MenuTextOption {
     String EXIT = "zakończ program - wciśnij 4";
 
     // DaultCatalogMenu constans
-    String INNER_MENU_FIRST_OPTION = "Wyświetl wszystkie awarie - wciśnij 1";
-    String INNER_MENU_SECOND_OPTION = "Wybierz awarię - wciśnij 2";
+    String FIRST_INNER_MENU_FIRST_OPTION = "Wyświetl wszystkie awarie - wciśnij 1";
+    String FIRST_INNER_MENU_SECOND_OPTION = "Wybierz awarię - wciśnij 2";
+
+    // FaultIdentification constans
+    String SECOND_INNER_MENU_FIRST_OPTION = "";
+    String SECOND_INNER_MENU_SECOND_OPTION = "";
 
     // searchCertainFault()
     String CHOSEN_FAULT = "WYBRANA AWARIA:";
