@@ -1,8 +1,5 @@
 package WaveSoftProgram;
 
-/**
- * Created by piotr on 26.03.17.
- */
 public interface MenuTextOption {
 
     // FaultDiagnosis constans
@@ -20,8 +17,9 @@ public interface MenuTextOption {
     String FIRST_INNER_MENU_SECOND_OPTION = "Wybierz awarię - wciśnij 2";
 
     // FaultIdentification constans
-    String SECOND_INNER_MENU_FIRST_OPTION = "";
-    String SECOND_INNER_MENU_SECOND_OPTION = "";
+    String SECOND_INNER_MENU_FIRST_OPTION = "Zacznij identyfikację - wciśnij 1";
+    String SECOND_INNER_MENU_SECOND_OPTION = "Powrót - wciśnij 2";
+    String SECOND_INNER_MENU_THIRD_OPTION = "Pzakończ program - wciśnij 3";
 
     // searchCertainFault()
     String CHOSEN_FAULT = "WYBRANA AWARIA:";
