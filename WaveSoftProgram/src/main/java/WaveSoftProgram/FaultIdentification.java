@@ -3,15 +3,16 @@ package WaveSoftProgram;
 
 import org.json.JSONException;
 
+import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.logging.Logger;
 
-public class FaultIdentification implements MenuTextOption {
+public class FaultIdentification extends FaultSurvey implements MenuTextOption {
 
     private static final Logger LOGGER = Logger.getLogger(FaultDiagnosis.class.getName());
 
-    public void faultIdentificationMenu() throws JSONException {
+    public void faultIdentificationMenu() throws JSONException, IOException {
         boolean quit = false;
         int choice;
         while(!quit){
@@ -20,23 +21,17 @@ public class FaultIdentification implements MenuTextOption {
             try {
                 //selecting list of options
                 Menu menuAutoApp = new Menu();
-                FaultCatalogMenu faultCatalogMenu = new FaultCatalogMenu();
                 choice = scanner.nextInt();
                 //clear input buffer
                 scanner.nextLine();
                 switch (choice) {
                     case 1:
-                        /*konstrukcyjne problemy */
-                        ;
+                        constructionProblem();
                         break;
                     case 2:
-                        /*Układ mechaniczny-elektryczny */
-                        ;
-                        break;
-                    case 3:
                         quit = true;
                         break;
-                    case 4:
+                    case 3:
                         menuAutoApp.progEnding();
                         quit = true;
                         break;
@@ -51,8 +46,7 @@ public class FaultIdentification implements MenuTextOption {
         LOGGER.info("\n"
                 + SECOND_INNER_MENU_FIRST_OPTION + "\n"
                 + SECOND_INNER_MENU_SECOND_OPTION + "\n"
-                + THIRD_OPTION + "\n"
-                + FOURTH_OPTION + "\n"
+                + SECOND_INNER_MENU_THIRD_OPTION + "\n"
                 + INSTRUCTION);
     }
 }
