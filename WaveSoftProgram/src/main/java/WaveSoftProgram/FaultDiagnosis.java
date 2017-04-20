@@ -2,6 +2,7 @@ package WaveSoftProgram;
 
 import org.json.JSONException;
 
+import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.logging.Logger;
@@ -10,7 +11,7 @@ public class FaultDiagnosis extends JsonHandling implements MenuTextOption {
 
     private static final Logger LOGGER = Logger.getLogger(FaultDiagnosis.class.getName());
 
-    public void faultDiagnosisMenu() throws JSONException {
+    public void faultDiagnosisMenu() throws JSONException, IOException {
         boolean quit = false;
         int choice;
         while(!quit){
