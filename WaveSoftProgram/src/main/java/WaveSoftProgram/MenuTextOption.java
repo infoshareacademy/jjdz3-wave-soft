@@ -19,7 +19,12 @@ public interface MenuTextOption {
     // FaultIdentification constans
     String SECOND_INNER_MENU_FIRST_OPTION = "Zacznij identyfikację - wciśnij 1";
     String SECOND_INNER_MENU_SECOND_OPTION = "Powrót - wciśnij 2";
-    String SECOND_INNER_MENU_THIRD_OPTION = "Pzakończ program - wciśnij 3";
+    String SECOND_INNER_MENU_THIRD_OPTION = "Zakończ program - wciśnij 3";
+    String FALIURE_QUESTION_OIL_PRESSURE = "Czy pali się kontrolka \"CIŚNIENIE OLEJU SILNIKOWEGO\"? (t/n)";
+    String FAILURE_QUESTION_BATTERY_CHARGE = "Czy pali się kontrolka\"ŁADOWANIE AKUMULATORA\"? (t/n)";
+    String FALIURE_QUESTION_HIGH_TEMPERATURE = "czy pali się kontrolka\"TEMPERATURA SILNIKA\"? (t/n)";
+    String FAILURE_QUESTION_STEERING_WHEEL = "Czy pali się kontrolka \"WSPOMOAGNIE KIEROWNICY\"? (t/n)";
+    String FAILURE_QUESTION_ENGINE = "Czy pali się kontrolka \"SILNIK\"? (t/n)";
 
     // searchCertainFault()
     String CHOSEN_FAULT = "WYBRANA AWARIA:";
@@ -28,4 +33,10 @@ public interface MenuTextOption {
     String NEEDED_PART = "POTRZEBNA CZĘŚĆ: ";
     String SEARCHING_QUESTION = "Wpisz nazwę awarii, której szukasz";
     String ERROR_INPUT = "BŁĄÐ! Nie ma takiej awari. Spróbuj jeszcze raz.";
+
+    // failureSurvey()
+    String FAILURE_SURVEY_START = "Odpowiedz na 5 pytań, aby zidentyfikować awarię";
+
+    // searchingJsonByHashSetFailure()
+    String FAILURE_SURVEY_RESULT = "Na podstawie Twoich odpowiedzi zidentyfikowano następujące awarie: ";
 }
