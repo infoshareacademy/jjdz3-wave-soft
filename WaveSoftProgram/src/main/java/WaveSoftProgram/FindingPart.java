@@ -8,13 +8,17 @@ import WaveSoftProgram.parts.PlaceInCar;
 import java.io.IOException;
 
 /**
- * Created by piotr_gy on 01.03.17.
+ * Class describes how to print an object of a questionnaire for searching a car part on console.
  */
 public class FindingPart {
 
     private PartParser partParser;
     private int placeIndex, categoryIndex, partIndex;
 
+    /**
+     * Prints a questionnaire for searching a car part.
+     * @param fileName A name of json file which is a source of questions for a questionnaire.
+     */
     public void findPartMenu(String fileName) {
         partParser = new PartParser(fileName);
 
@@ -31,6 +35,10 @@ public class FindingPart {
 
     }
 
+    /**
+     * Prints a first question in a questionnaire.
+     * @param stage A text of a initial question.
+     */
     private void printQuestions1(String stage) {
         System.out.println("Wybierz " + stage);
         int i = 1;
@@ -41,6 +49,11 @@ public class FindingPart {
         placeIndex = readChoice();
     }
 
+    /**
+     * Prints a second question in a questionnaire.
+     * @param stage A text of a second question.
+     * @param placeIndex An index of place with broken car part on the list.
+     */
     private void printQuestions2(String stage, int placeIndex) {
         System.out.println("Wybierz " + stage);
         int i = 1;
@@ -51,6 +64,12 @@ public class FindingPart {
         categoryIndex = readChoice();
     }
 
+    /**
+     * Prints a last question in a questionnaire.
+     * @param stage A text of a last question.
+     * @param placeIndex An index of place with broken car part on the list.
+     * @param categoryIndex An index of category of car part on the list.
+     */
     private void printQuestions3(String stage, int placeIndex, int categoryIndex) {
         System.out.println("Wybierz " + stage);
         int i = 1;
@@ -61,6 +80,12 @@ public class FindingPart {
         partIndex = readChoice();
     }
 
+    /**
+     * Prints a suitable searching phrase.
+     * @param placeIndex An index of place with broken car part on the list.
+     * @param categoryIndex An index of category of car part on the list.
+     * @param partIndex An index a car part on the list.
+     */
     private void printTip(int placeIndex, int categoryIndex, int partIndex) {
         System.out.println("Wpisz w wyszukiwarkę: " + partParser.getPlaceInCarList().get(placeIndex).getCategories().get(categoryIndex).getParts().get(partIndex).getSearchPhrase());
         System.out.println("Naciśnij Enter...");
@@ -75,7 +100,10 @@ public class FindingPart {
 
     }
 
-
+    /**
+     * Reads an input from a keyboard. An answer chosen by the user.
+     * @return An index of a chosen answer on the list.
+     */
     private int readChoice() {
         char choice = 0, ignore;
         boolean again = true;
