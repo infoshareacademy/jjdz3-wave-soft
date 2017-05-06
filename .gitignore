@@ -1,5 +1,5 @@
 .idea
 pom.xml
-WaveSoftProgram.iml
+*.iml
 WaveSoftProgram/target/
 
