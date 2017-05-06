@@ -93,7 +93,9 @@ public class Menu {
 
                 break;
             case '7':
-                System.out.println("6. WYBRAŁEŚ Szybka diagnostyka samochodowa  \n");
+                FaultDiagnosis diagnosis = new FaultDiagnosis();
+                diagnosis.jsonFileReader("faultCatalog.json");
+                diagnosis.faultDiagnosisMenu();
 
                 break;
         }
